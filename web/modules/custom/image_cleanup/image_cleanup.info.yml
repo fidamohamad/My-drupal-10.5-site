@@ -1,0 +1,7 @@
+name: 'Image Cleanup'
+type: module
+description: 'Deletes unmatched images from news-items folder based on CSV.'
+core_version_requirement: ^10
+package: Custom
+dependencies:
+  - file

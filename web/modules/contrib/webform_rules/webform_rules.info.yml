@@ -1,0 +1,13 @@
+name: 'Webform Rules'
+core_version_requirement: ^8.8 || ^9 || ^10 || ^11
+description: 'Adds rules integration for webform submissions.'
+package: Webform
+dependencies:
+  - webform
+  - rules
+type: module
+
+# Information added by Drupal.org packaging script on 2024-11-20
+version: '8.x-1.0-alpha2'
+project: 'webform_rules'
+datestamp: 1732124993

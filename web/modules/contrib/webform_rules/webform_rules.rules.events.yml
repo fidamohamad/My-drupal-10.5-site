@@ -1,0 +1,36 @@
+webform_rules_submit_as_draft:
+  label: 'After a webform has been saved as draft'
+  category: 'Webform Rules'
+  context:
+    webform:
+      type: 'entity:webform'
+      label: 'The saved as draft webform'
+webform_rules_submit:
+  label: 'After a webform has been submitted'
+  category: 'Webform Rules'
+  context:
+    webform:
+      type: 'entity:webform'
+      label: 'The submitted webform'
+webform_rules_insert:
+  label: 'After a submission draft has been submitted'
+  category: 'Webform Rules'
+  context:
+    webform:
+      type: 'entity:webform'
+      label: 'The submitted draft webform'
+webform_rules_update:
+  label: 'After a webform submission has been updated'
+  category: 'Webform Rules'
+  context:
+    webform:
+      type: 'entity:webform'
+      label: 'The updated webform'
+webform_rules_delete:
+  label: 'After a webform submission has been deleted'
+  category: 'Webform Rules'
+  context:
+    webform:
+      type: 'entity:webform'
+      label: 'The deleted webform'
+

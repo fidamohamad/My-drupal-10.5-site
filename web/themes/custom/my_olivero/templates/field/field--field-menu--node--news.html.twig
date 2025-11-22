@@ -1,0 +1,47 @@
+{# Debug template - field--field-menu--node--news.html.twig #}
+
+{# First, let's see if this template is being used at all #}
+<div style="background: red; color: white; padding: 10px;">
+  TEMPLATE IS WORKING - field--field-menu--node--news.html.twig
+</div>
+
+{# Debug all available variables #}
+{{ dump() }}
+
+{# Check if items exists #}
+{% if items %}
+  <div style="background: green; color: white; padding: 5px;">
+    Items variable exists with {{ items|length }} items
+  </div>
+  
+  <ul class="custom-test-list">
+    {% for item in items %}
+      <li>
+        <strong>Item {{ loop.index }}:</strong>
+        {{ dump(item) }}
+        <br>
+        Content: {{ item.content }}
+      </li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <div style="background: orange; color: black; padding: 5px;">
+    No items found
+  </div>
+{% endif %}
+
+{# Try alternative approaches #}
+{% if content %}
+  <div style="background: blue; color: white; padding: 5px;">
+    Content variable exists
+  </div>
+  {{ dump(content) }}
+{% endif %}
+
+{# Check field_items if it exists #}
+{% if field_items %}
+  <div style="background: purple; color: white; padding: 5px;">
+    Field_items exists
+  </div>
+  {{ dump(field_items) }}
+{% endif %}

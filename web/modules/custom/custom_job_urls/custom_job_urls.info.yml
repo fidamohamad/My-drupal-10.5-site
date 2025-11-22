@@ -1,0 +1,5 @@
+name: Custom Job URLs
+type: module
+description: 'Provides SEO-friendly URLs for job listings'
+core_version_requirement: ^10
+package: Custom

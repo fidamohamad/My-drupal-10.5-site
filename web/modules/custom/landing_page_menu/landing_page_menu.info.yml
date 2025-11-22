@@ -1,0 +1,6 @@
+name: Landing Page Menu
+type: module
+description: 'This module is used for custom menu in landing Page content'
+package: Landportal
+version: 1.0
+core_version_requirement: ^10

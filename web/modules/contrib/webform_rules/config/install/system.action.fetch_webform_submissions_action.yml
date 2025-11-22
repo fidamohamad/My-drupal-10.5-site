@@ -1,0 +1,11 @@
+id: fetch_webform_submissions_action
+label: 'Fetch webform submissions'
+status: true
+langcode: en
+type: webform
+plugin: fetch_webform_submissions_action
+dependencies:
+  module:
+    - webform
+    - webform_rules
+

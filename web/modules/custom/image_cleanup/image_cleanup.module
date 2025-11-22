@@ -1,0 +1,62 @@
+<?php
+use Drupal\node\NodeInterface;
+use Drupal\Core\Entity\EntityInterface;
+
+/**
+ * Implements hook_entity_presave().
+ */
+function image_cleanup_entity_presave(EntityInterface $entity) {
+  if ($entity instanceof NodeInterface && !$entity->isNew()) {
+    $original = \Drupal::entityTypeManager()
+      ->getStorage('node')
+      ->loadUnchanged($entity->id());
+
+    if ($original && $original->isPublished() && !$entity->isPublished()) {
+      $current_user = \Drupal::currentUser();
+      $username = $current_user->getDisplayName();
+      $user_id = $current_user->id();
+      $node_id = $entity->id();
+      $title = $entity->label();
+      $timestamp = date('Y-m-d H:i:s');
+      // $ip_address = \Drupal::request()->getClientIp();
+      $request = \Drupal::request();
+      $ip_address = $request->getClientIp();
+
+      // If IP is IPv6 loopback (::1), convert it to IPv4 equivalent
+      if ($ip_address === '::1') {
+        $ip_address = '127.0.0.1';
+      }
+
+      // Log to Drupal log
+      \Drupal::logger('content_unpublish')->notice(
+        'Node @title (nid: @nid) was unpublished by user @user (uid: @uid, IP: @ip).',
+        [
+          '@title' => $title,
+          '@nid' => $node_id,
+          '@user' => $username,
+          '@uid' => $user_id,
+          '@ip' => $ip_address,
+        ]
+      );
+
+      // Log to CSV file
+      $log_dir = 'public://unpublish_logs';
+      $log_file = $log_dir . '/unpublished_nodes.csv';
+
+      // Ensure the directory exists
+      \Drupal::service('file_system')->prepareDirectory($log_dir, \Drupal\Core\File\FileSystemInterface::CREATE_DIRECTORY);
+
+      $data = [$timestamp, $node_id, $title, $username, $user_id, $ip_address];
+
+      // Open file and append row
+      $handle = fopen($log_file, 'a+');
+      if ($handle) {
+        fputcsv($handle, $data);
+        fclose($handle);
+      }
+    }
+  }
+}
+
+
+?>

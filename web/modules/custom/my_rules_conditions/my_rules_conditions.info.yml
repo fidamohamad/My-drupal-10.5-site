@@ -1,0 +1,5 @@
+name: 'My Custom Rules Conditions'
+type: module
+description: 'Provides custom conditions for the Rules module.'
+package: Custom
+core_version_requirement: ^10

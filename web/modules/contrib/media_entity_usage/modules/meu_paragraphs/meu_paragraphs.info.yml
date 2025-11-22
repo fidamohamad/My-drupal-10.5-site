@@ -1,0 +1,14 @@
+name: Media entity usage for Paragraphs
+type: module
+description: Provide information about paragraphs that references media
+package: Media
+core_version_requirement: ^8.8 || ^9 || ^10
+
+dependencies:
+  - paragraphs
+  - media_entity_usage
+  - media
+# Information added by Drupal.org packaging script on 2023-09-06
+version: '9.1.0'
+project: 'media_entity_usage'
+datestamp: 1693989332

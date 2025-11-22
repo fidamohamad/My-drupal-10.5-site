@@ -1,0 +1,11 @@
+id: close_webforms_action
+label: 'Close webforms'
+status: true
+langcode: en
+type: webform
+plugin: close_webforms_action
+dependencies:
+  module:
+    - webform
+    - webform_rules
+

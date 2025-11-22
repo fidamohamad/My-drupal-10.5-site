@@ -1,0 +1,5 @@
+services:
+  custom_job_urls.route_subscriber:
+    class: Drupal\custom_job_urls\EventSubscriber\CustomJobUrlsRouteSubscriber
+    tags:
+      - { name: event_subscriber }

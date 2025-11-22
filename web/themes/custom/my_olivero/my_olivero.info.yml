@@ -1,0 +1,7 @@
+name: My Olivero Subtheme
+type: theme
+description: 'A subtheme of Olivero for customizations.'
+core_version_requirement: ^10
+base theme: olivero
+libraries:
+  - my_olivero/global-styling

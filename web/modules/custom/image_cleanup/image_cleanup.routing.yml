@@ -1,0 +1,7 @@
+image_cleanup.run:
+  path: '/admin/tools/image-cleanup'
+  defaults:
+    _controller: '\Drupal\image_cleanup\Controller\CleanupController::run'
+    _title: 'Run Image Cleanup'
+  requirements:
+    _permission: 'administer site configuration'

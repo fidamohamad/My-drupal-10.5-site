@@ -1,0 +1,11 @@
+id: open_webforms_action
+label: 'Open webforms'
+status: true
+langcode: en
+type: webform
+plugin: open_webforms_action
+dependencies:
+  module:
+    - webform
+    - webform_rules
+
