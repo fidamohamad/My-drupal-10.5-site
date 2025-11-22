@@ -29,6 +29,7 @@
         "drupal/field_permissions": "^1.4",
         "drupal/file_replace": "^1.5",
         "drupal/media_entity_usage": "^9.1",
+        "drupal/redirect": "^1.12",
         "drupal/rules": "^4.0",
         "drupal/search_api": "^1.39",
         "drupal/search_api_solr": "^4.3",
